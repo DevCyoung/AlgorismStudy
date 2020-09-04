@@ -1,0 +1,30 @@
+Greedy
+Chargd calculate
+
+#나의 코딩
+cash = 1260
+coin = 500
+
+countCoin = 0
+
+while cash != 0:
+
+    cash -= coin
+    countCoin +=1
+    if cash < 50:
+        coin = 10
+    elif cash < 100:
+        coin = 50
+    elif cash < 500:
+        coin = 100
+print(countCoin)
+
+# book coding
+cash = 1260
+count = 0
+list = [500,100,50,10]
+
+for coin in list:
+    count += cash // coin
+    cash %= coin
+print(count)
