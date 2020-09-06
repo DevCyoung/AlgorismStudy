@@ -1,0 +1,34 @@
+def factorial(n):
+    result = 1
+    for i in range(1,n+1):
+        result *= i
+    print(result)
+    return result
+factorial(5)
+
+def fac(n):
+    if n <= 1:
+        return 1
+    return  n * fac(n -1)
+print( fac(5))
+
+vertexList = ['0','1','2','3','4','5','6']
+edgeList = [  (0,1) ,(0,2) ,(1,0),(1,3) , (2,0) , (2,4) ,(2,5),
+              (3,1) , (4,2) , (4, 6) , (5,2) , (6,4)]
+
+adiacencyList = [[]for vertext in vertexList]
+
+for edge in edgeList:
+    adiacencyList[ edge[0] ].append(edge[1])
+print(adiacencyList)
+
+slist = [0]
+visited = []
+while len(slist) != 0:
+    current = slist.pop()
+    for node in adiacencyList[current]:
+        if not node in visited:
+            slist.append(node)
+    visited.append(current)
+
+print(visited)
