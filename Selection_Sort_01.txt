@@ -1,0 +1,15 @@
+array = [7,5,9,0,3,1,6,2,4,8]
+
+for i in range(len(array)):
+    min_index = i
+    for j in range( i +1 , len(array)):
+        if array[min_index] > array[j]: # min_index 이 array[j] 보다 더크다면 계속해서 자기보다 작은 index 를 저장해간다.
+            min_index = j;
+    array[i] , array[min_index] = array[min_index] , array[i] # 스와이프한다.
+
+print(array)
+
+# 스와이프 예제
+testArray = [3,5]
+testArray[0] , testArray[1] = testArray[1] , testArray[0]
+print(testArray)
